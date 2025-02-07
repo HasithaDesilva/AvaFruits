@@ -50,65 +50,33 @@
 </head>
 <body>
 <script>
-    // Function to check if today is Friday
-    function isFriday() {
-      const today = new Date();
-      const dayOfWeek = today.getDay(); // 0 (Sunday) to 6 (Saturday)
-      return dayOfWeek === 5; // 5 corresponds to Friday
+  function submitResponse(wantsFruits) {
+    const name = document.getElementById('name').value;
+
+    if (!name) {
+      alert("Please select your name.");
+      return;
     }
 
-    // Disable buttons and show error message if it's not Friday
-    function checkDayAndEnableButtons() {
-      const yesButton = document.getElementById('yesButton');
-      const noButton = document.getElementById('noButton');
-      const errorMessage = document.getElementById('errorMessage');
+    const url = 'https://script.google.com/macros/s/AKfycbwvDX9iYYxhWWoOT-KSOyo3sUDMGmmoMp9MIbfGiPoArxr7HEaKRsqspiYh3BiEfwWGmA/exec'; // Replace with your actual Google Apps Script URL
 
-      if (!isFriday()) {
-        yesButton.disabled = true;
-        noButton.disabled = true;
-        yesButton.classList.add('disabled');
-        noButton.classList.add('disabled');
-        errorMessage.innerText = "You can only submit your response on Fridays!";
-      } else {
-        yesButton.disabled = false;
-        noButton.disabled = false;
-        yesButton.classList.remove('disabled');
-        noButton.classList.remove('disabled');
-        errorMessage.innerText = "";
-      }
-    }
-
-    // Function to submit the response
-    function submitResponse(wantsFruits) {
-      const name = document.getElementById('name').value;
-
-      if (!name) {
-        alert("Please select your name.");
-        return;
-      }
-
-      const url = 'https://script.google.com/macros/s/AKfycbwvDX9iYYxhWWoOT-KSOyo3sUDMGmmoMp9MIbfGiPoArxr7HEaKRsqspiYh3BiEfwWGmA/exec'; // Replace with your Google Apps Script URL
-      const data = { name: name, wantsFruits: wantsFruits };
-
-      fetch(url, {
-        method: 'POST',
-        body: JSON.stringify(data),
-      })
-      .then(response => response.text())
-      .then(message => {
-        document.getElementById('responseMessage').innerText = message;
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        document.getElementById('responseMessage').innerText = 'There was an error submitting your response.';
-      });
-    }
-
-    // Check the day when the page loads
-    window.onload = function() {
-      checkDayAndEnableButtons();
-    };
-  </script>
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded', // Ensure correct content type
+      },
+      body: `name=${encodeURIComponent(name)}&wantsFruits=${encodeURIComponent(wantsFruits)}`, // Properly encode parameters
+    })
+    .then(response => response.text())
+    .then(message => {
+      document.getElementById('responseMessage').innerText = message;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('responseMessage').innerText = 'There was an error submitting your response.';
+    });
+  }
+</script>
   <div class="container">
     <h1>Do You Want Fruits?</h1>
     <p>Please select your name and preference:</p>
