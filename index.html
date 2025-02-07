@@ -49,57 +49,7 @@
   </style>
 </head>
 <body>
-
-  <div class="container">
-    <h1>Do You Want Fruits?</h1>
-    <p>Please select your name and preference:</p>
-    
-    <!-- Dropdown for names -->
-    <select id="name" required>
-      <option value="" disabled selected>Select your name</option>
-      <option value="Chandra,Arief">Chandra, Arief</option>
-      <option value="Lee Chee Weng,Kelvin">Lee Chee Weng, Kelvin</option>
-      <option value="Chee,Benny">Chee, Benny</option>
-      <option value="Tee Wei Han">Tee Wei Han</option>
-      <option value="Satish Babu Kande">Satish Babu Kande</option>
-      <option value="Balasubramanian Thiyagarajan">Balasubramanian Thiyagarajan</option>
-      <option value="Hasitha De Silva">Hasitha De Silva</option>
-      <option value="Chua Sin Kin">Chua Sin Kin</option>
-      <option value="Ding Wei Sheng Kelvin">Ding Wei Sheng Kelvin</option>
-      <option value="Thant Zin Aung">Thant Zin Aung</option>
-      <option value="Michelle Ann Rosario">Michelle Ann Rosario</option>
-      <option value="Jain Raj Thankanadar">Jain Raj Thankanadar</option>
-      <option value="Kow Kea Jing">Kow Kea Jing</option>
-      <option value="Tamil Selvan, Lavanya">Tamil Selvan, Lavanya</option>
-      <option value="Lim Hui Xin, Roline">Lim Hui Xin, Roline</option>
-      <option value="Zhen Yang, Chong">Zhen Yang, Chong</option>
-      <option value="Sara Badiuszaman">Sara Badiuszaman</option>
-      <option value="Digvijay Singh">Digvijay Singh</option>
-      <option value="Cythia Hang Nia Thian">Cythia Hang Nia Thian</option>
-      <option value="Lim Sze Qin">Lim Sze Qin</option>
-      <option value="New Eng Yau">New Eng Yau</option>
-      <option value="Jerry Tan Jia Chin">Jerry Tan Jia Chin</option>
-      <option value="Zana Yu">Zana Yu</option>
-      <option value="Candice Yu">Candice Yu</option>
-      <option value="Junelle Koh">Junelle Koh</option>
-      <option value="May Min">May Min</option>
-      <option value="Yak Chin Zee">Yak Chin Zee</option>
-      <option value="Monica Mary">Monica Mary</option>
-      <option value="Boey He">Boey He</option>
-      <option value="Shevon Lee">Shevon Lee</option>
-    </select>
-    
-    <br><br>
-    
-    <!-- Buttons for Yes/No -->
-    <button id="yesButton" class="yes" onclick="submitResponse('Yes')">Yes, I want fruits!</button>
-    <button id="noButton" class="no" onclick="submitResponse('No')">No, I don't want fruits.</button>
-    
-    <p id="responseMessage"></p>
-    <p id="errorMessage" class="message"></p>
-  </div>
-
-  <script>
+<script>
     // Function to check if today is Friday
     function isFriday() {
       const today = new Date();
@@ -159,6 +109,56 @@
       checkDayAndEnableButtons();
     };
   </script>
+  <div class="container">
+    <h1>Do You Want Fruits?</h1>
+    <p>Please select your name and preference:</p>
+    
+    <!-- Dropdown for names -->
+    <select id="name" required>
+      <option value="" disabled selected>Select your name</option>
+      <option value="Chandra,Arief">Chandra, Arief</option>
+      <option value="Lee Chee Weng,Kelvin">Lee Chee Weng, Kelvin</option>
+      <option value="Chee,Benny">Chee, Benny</option>
+      <option value="Tee Wei Han">Tee Wei Han</option>
+      <option value="Satish Babu Kande">Satish Babu Kande</option>
+      <option value="Balasubramanian Thiyagarajan">Balasubramanian Thiyagarajan</option>
+      <option value="Hasitha De Silva">Hasitha De Silva</option>
+      <option value="Chua Sin Kin">Chua Sin Kin</option>
+      <option value="Ding Wei Sheng Kelvin">Ding Wei Sheng Kelvin</option>
+      <option value="Thant Zin Aung">Thant Zin Aung</option>
+      <option value="Michelle Ann Rosario">Michelle Ann Rosario</option>
+      <option value="Jain Raj Thankanadar">Jain Raj Thankanadar</option>
+      <option value="Kow Kea Jing">Kow Kea Jing</option>
+      <option value="Tamil Selvan, Lavanya">Tamil Selvan, Lavanya</option>
+      <option value="Lim Hui Xin, Roline">Lim Hui Xin, Roline</option>
+      <option value="Zhen Yang, Chong">Zhen Yang, Chong</option>
+      <option value="Sara Badiuszaman">Sara Badiuszaman</option>
+      <option value="Digvijay Singh">Digvijay Singh</option>
+      <option value="Cythia Hang Nia Thian">Cythia Hang Nia Thian</option>
+      <option value="Lim Sze Qin">Lim Sze Qin</option>
+      <option value="New Eng Yau">New Eng Yau</option>
+      <option value="Jerry Tan Jia Chin">Jerry Tan Jia Chin</option>
+      <option value="Zana Yu">Zana Yu</option>
+      <option value="Candice Yu">Candice Yu</option>
+      <option value="Junelle Koh">Junelle Koh</option>
+      <option value="May Min">May Min</option>
+      <option value="Yak Chin Zee">Yak Chin Zee</option>
+      <option value="Monica Mary">Monica Mary</option>
+      <option value="Boey He">Boey He</option>
+      <option value="Shevon Lee">Shevon Lee</option>
+    </select>
+    
+    <br><br>
+    
+    <!-- Buttons for Yes/No -->
+    <button id="yesButton" class="yes" onclick="submitResponse('Yes')">Yes, I want fruits!</button>
+    <button id="noButton" class="no" onclick="submitResponse('No')">No, I don't want fruits.</button>
+    
+    <p id="responseMessage"></p>
+    <p id="errorMessage" class="message"></p>
+  </div>
+
+  
 
 </body>
 </html>
